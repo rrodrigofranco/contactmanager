@@ -5,7 +5,8 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('contacts', ContactController::class)->middleware('auth');
-Route::get('/', [ContactController::class, 'index']);
+Route::get('/', [ContactController::class, 'index'])
+    ->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
