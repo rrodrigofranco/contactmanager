@@ -28,7 +28,7 @@ This project was developed as a technical exercise to demonstrate knowledge of L
 
 ---
 
-## 🗄️ Database Structure
+## Database Structure
 
 Contacts table:
 
