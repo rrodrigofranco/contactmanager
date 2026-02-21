@@ -48,25 +48,25 @@ Contacts table:
 
 Clone the repository:
 
-git clone https://github.com/rrodrigofranco/contactmanager.git
+```git clone https://github.com/rrodrigofranco/contactmanager.git```
 
 cd contactmanager
 
 ### Install dependencies:
-composer install
+```composer install```
 
 ### Copy environment file:
-cp .env.example .env
+```cp .env.example .env```
 
 ### Generate application key:
-php artisan key:generate
+```php artisan key:generate```
 
 ### Run migrations:
-php artisan migrate
+```php artisan migrate```
 
 ### Start development server:
-php artisan serve
+```php artisan serve```
 
 ### Access
-http://127.0.0.1:8000
+```http://127.0.0.1:8000```
 
