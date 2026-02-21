@@ -5,9 +5,13 @@
         </h2>
         
     </x-slot>
-    <div>
-        <a href="{{ route('contacts.create') }}">Add Contact</a>
-    </div>
+
+    <form id="send-verification" method="get" action="{{ route('contacts.create') }}">
+        @csrf
+        <div class="flex justify-end items-center gap-4">
+            <x-primary-button>{{ __('Add Contact') }}</x-primary-button>
+        </div>
+    </form>
     
     <div
         class="relative flex flex-col w-full h-full overflow-x-auto text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">

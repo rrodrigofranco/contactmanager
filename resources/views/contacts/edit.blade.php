@@ -6,16 +6,31 @@
         
     </x-slot>
 
-    <form action="{{ route('contacts.update', $contact) }}" method="POST">
+    <form method="post" action="{{ route('contacts.update', $contact) }}" class="mt-6 space-y-6">
         @csrf
-        @method('PUT')
+        @method('patch')
 
-        <input type="text" name="name" value="{{ $contact->name }}">
-        <input type="text" name="contact" value="{{ $contact->contact }}">
-        <input type="email" name="email" value="{{ $contact->email }}">
+        <div>
+            <x-input-label for="name" :value="__('Name')" />
+            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $contact->name)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+        </div>
 
-        <button type="submit">Update</button>
+        <div>
+            <x-input-label for="contact" :value="__('Contact')" />
+            <x-text-input id="contact" name="contact" type="number" class="mt-1 block w-full" :value="old('contact', $contact->contact)" required autofocus autocomplete="contact" />
+            <x-input-error class="mt-2" :messages="$errors->get('contact')" />
+        </div>
+
+        <div>
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $contact->email)" required autofocus autocomplete="email" />
+            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+        </div>
+
+        <div class="flex items-center gap-4">
+            <x-primary-button>{{ __('Save') }}</x-primary-button>
+        </div>
     </form>
-
 
 </x-app-layout>
