@@ -64,6 +64,9 @@ cd contactmanager
 ### Run migrations:
 ```php artisan migrate```
 
+### Run seeds:
+```php artisan db:seed CreateUserSeeder```
+
 ### Start development server:
 ```php artisan serve```
 
