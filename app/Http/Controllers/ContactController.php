@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Http\Services\ContactService;
 
 class ContactController extends Controller
 {
+    public function __construct(
+        protected ContactService $contactService
+    ) {}
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $contacts = Contact::all();
+        $contacts = $this->contactService->list();
         return view('contacts.index', compact('contacts'));
     }
 
@@ -35,7 +39,7 @@ class ContactController extends Controller
             'email' => 'required|email|unique:contacts,email',
         ]);
 
-        Contact::create($validated);
+        $this->contactService->create($validated);
 
         return redirect()->route('contacts.index');
     }
@@ -67,7 +71,7 @@ class ContactController extends Controller
             'email' => 'required|email|unique:contacts,email,' . $contact->id,
         ]);
 
-        $contact->update($validated);
+        $this->contactService->update($contact, $validated);
 
         return redirect()->route('contacts.index');
     }
@@ -77,7 +81,7 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        $contact->delete(); // soft delete
+        $this->contactService->delete($contact);
         return redirect()->route('contacts.index');
     }
 }

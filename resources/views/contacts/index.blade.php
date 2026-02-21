@@ -6,10 +6,16 @@
         
     </x-slot>
 
-    <form id="send-verification" method="get" action="{{ route('contacts.create') }}">
+    <form id="createcontact"
+        method="GET"
+        action="{{ route('contacts.create') }}"
+        class="mt-6 mb-6">
         @csrf
+
         <div class="flex justify-end items-center gap-4">
-            <x-primary-button>{{ __('Add Contact') }}</x-primary-button>
+            <x-primary-button>
+                {{ __('Add Contact') }}
+            </x-primary-button>
         </div>
     </form>
     
