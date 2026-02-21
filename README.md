@@ -75,3 +75,6 @@ Clone the repository:
 
 ### Tests
 ``` php artisan test ```
+
+## Using Docker
+``` docker-compose up -d --build```
