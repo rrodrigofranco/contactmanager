@@ -9,7 +9,7 @@
     <form id="createcontact"
         method="GET"
         action="{{ route('contacts.create') }}"
-        class="mt-6 mb-6">
+        class="mt-3 mb-4">
         @csrf
 
         <div class="flex justify-end items-center gap-4">
