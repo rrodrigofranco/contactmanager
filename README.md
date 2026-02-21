@@ -74,4 +74,4 @@ Clone the repository:
 ```http://127.0.0.1:8000```
 
 ### Tests
-``` php artisan test ``
+``` php artisan test ```
