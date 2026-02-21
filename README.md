@@ -50,7 +50,7 @@ Clone the repository:
 
 ```git clone https://github.com/rrodrigofranco/contactmanager.git```
 
-cd contactmanager
+```cd contactmanager```
 
 ### Install dependencies:
 ```composer install```
